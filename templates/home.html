@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Shares</th>
+            <th>Price</th>
+            <th>TOTAL</th>
+        </thead>
+        <tbody>
+            {% for i in range(table_len) %}
+                <tr>
+                    <td>{{symbols[i]}}</td>
+                    <td>{{names[i]}}</td>
+                    <td>{{shares[i]}}</td>
+                    <td>{{cur_price[i]}}</td>
+                    <td>{{holding_value[i]}}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4">CASH</td>
+                <td>{{balance}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{total}}</td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
