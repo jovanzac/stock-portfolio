@@ -40,7 +40,7 @@ def lookup(symbol):
     sym = urllib.parse.quote_plus(symbol)
     try:
         api_key = os.environ.get("API_KEY")
-        url_real_time = f"https://fmpcloud.io/api/v3/quote/AAPL?apikey={api_key}"
+        url_real_time = f"https://fmpcloud.io/api/v3/quote/{sym}?apikey={api_key}"
         price = requests.get(url_real_time)
         price.raise_for_status()
     except requests.RequestException:
