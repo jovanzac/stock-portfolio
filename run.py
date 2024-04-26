@@ -4,4 +4,4 @@ from application import app
 
 load_dotenv()
 if __name__ == "__main__" :
-    app.run(debug=False, host="0.0.0.0")
+    app.run(debug=False)
